@@ -3,6 +3,8 @@ permalink: /about/
 title: "About"
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
+I am an Applied Scientist at Amazon in the Credit Systems Research group within Amazon's B2B Lending and Consumer Payments platform. My work here involves research and development of the science behind improving the various loan and credit systems products with a focus of enabling better customer experience in helping Small and Medium Businesses onboard on to the AWS cloud.
 
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+I have previously worked in various aspects of Internet and computer networking. At Amazon Web Services I lead the scientific effort in forecasting the Networking rack growth in hundreds of existing, new and upcoming AWS data centers worldwide.
+
+I have also been heavily involved in research, development and application of solutions across the board to improve the AWS and CloudFront network and the Internet overall. I spent 6+ years at Akamai Technologies working in a variety of roles in performance engineering to enable more efficient media delivery across the Akamai network. I was responsible for improving performance for the top Akamai customers by creating tools, performing protocol level optimizations and analyzing huge quantities of data using statistical analysis, machine learning and advanced neural networks.
