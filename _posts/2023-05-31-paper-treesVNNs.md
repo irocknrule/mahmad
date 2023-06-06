@@ -32,7 +32,7 @@ Their primary contributions in this paper are:
 ## Results
 Tree based models are all much better than any of the DL models. The interesting result was that categorical features are not weaknesses in Neural Nets (NNs) on tabular data as performance gap exists even with only numerical features. 
 
-![](/assets/images/blogs/Grinsztajn_paper_fig-1.png "Tree based methods regularly outperforming the DL based methods on tabular data for both regression and classifcation tasks.")
+{% include figure image_path="/assets/images/blogs/Grinsztajn_paper_fig-1.png" alt="Figure 1 from paper" caption="Tree based methods regularly outperforming the DL based methods on tabular data for both regression and classifcation tasks." %}
 
 ## Digging deeper
 
