@@ -58,7 +58,7 @@ We can easily view an input batch using the following snippet. Note that the ima
 dls = graphs.dataloaders(working_df)
 dls.show_batch()
 ```
-![](/images/show_batch_input.png "Sample batch of input images with transforms")
+![](/assets/images/blogs/show_batch_input.png "Sample batch of input images with transforms")
 
 ## Training the model
 Training the image classifier is extremely easy in *fastai*. We create a new ```vision_learner``` object, provide the input dataloader and the pre-trained model weights along-with the metric to train  by. Here we specify that we want to train for only 10 epochs. 
@@ -74,7 +74,7 @@ After training for 10 epochs, we see that the error rate is already quite low, i
 
 The confusion matrix for the training dataset is below:
 
-![](/images/resnet18_confusion-matrix.png "Confusion matrix from training the model for 10 epochs using resnet18")
+![](/assets/images/blogs/resnet18_confusion-matrix.png "Confusion matrix from training the model for 10 epochs using resnet18")
 
 ## Comparisons with resnet34
 
