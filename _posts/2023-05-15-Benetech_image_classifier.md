@@ -2,7 +2,7 @@
 title: "Simple Image classification using *fastai*"
 date: 2023-05-05T15:34:30-04:00
 categories:
-  - blog
+  - Blog
   - fastai
   - computer vision
 tags:
