@@ -58,6 +58,8 @@ We can easily view an input batch using the following snippet. Note that the ima
 dls = graphs.dataloaders(working_df)
 dls.show_batch()
 ```
+{% include figure image_path="/assets/images/blogs/show_batch_input.png" alt="Transformed input images" caption="Sample batch of input images with transforms" %}
+
 ![](/assets/images/show_batch_input.png "Sample batch of input images with transforms")
 
 ## Training the model
@@ -74,7 +76,7 @@ After training for 10 epochs, we see that the error rate is already quite low, i
 
 The confusion matrix for the training dataset is below:
 
-![](/assets/images/blogs/resnet18_confusion-matrix.png "Confusion matrix from training the model for 10 epochs using resnet18")
+{% include figure image_path="/assets/images/blogs/resnet18_confusion-matrix.png" alt="Figure 1 from paper" caption="Confusion matrix from training the model for 10 epochs using resnet18." %}
 
 ## Comparisons with resnet34
 
