@@ -60,8 +60,6 @@ dls.show_batch()
 ```
 {% include figure image_path="/assets/images/blogs/show_batch_input.png" alt="Transformed input images" caption="Sample batch of input images with transforms" %}
 
-![](/assets/images/show_batch_input.png "Sample batch of input images with transforms")
-
 ## Training the model
 Training the image classifier is extremely easy in *fastai*. We create a new ```vision_learner``` object, provide the input dataloader and the pre-trained model weights along-with the metric to train  by. Here we specify that we want to train for only 10 epochs. 
 

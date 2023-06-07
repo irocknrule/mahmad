@@ -57,7 +57,8 @@ plugins:
 
 author:
   name   : "Mohammad Ahmad"
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/bio-pic.png"
+  location : "Seattle, WA"
   bio    : "Hello and welcome to this page. I am currently an Applied Scientist at Amazon with previous stops in AWS and Akamai. "
   links:
     - label: "Website"
