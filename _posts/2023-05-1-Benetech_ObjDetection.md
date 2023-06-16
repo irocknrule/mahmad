@@ -14,9 +14,33 @@ We now take a closer look at the step in training a new model and carrying out O
 
 ### Input Datasets in COCO format
 
+Data inputs to detectron2 require image annotations with segments/object bounding boxes to be in specific formats and in this case we used the well-known Common Objects in Context (COCO) format {3} .COCO  is a widely used dataset format for computer vision tasks, such as object detection, instance segmentation, and keypoint detection. The COCO dataset provides a standardized format to represent image annotations and their corresponding metadata and it consists of 2 main components: images and annotations. 
 
+- **images:** each image contains information about the image in the dataset such as file name, width, height, a unique ID and some few other optional details. 
+- **annotations:** This represents the object instance within an image and contains the ID of the image where it belongs, a specific category ID of the object, the bounding box coordinates of the object in \[x,y,width,height] format and some other attributes representing the object. 
+
+The annotation JSON provided as input for the Kaggle competition was not in this format - we had specific directories for images and annotations and the annotation format had multiple different fields. So we write up a quick python notebook to carry out the transformation from the input to the standard COCO format as shown below:
+
+```
+coco_data = {
+    "info": {
+        "description": "Benetech input images - random 10K sample",
+        "version": "1.0",
+        "year": 2023,
+        "contributor": "",
+        "date_created": "2023-06-11"
+    },
+    "licenses": [],
+    "images": [],
+    "categories": [],
+    "annotations": []
+}
+```
+
+The code for the converting the 10K random samples from the input dataset of ~60K images is shared in the notebook here: https://github.com/irocknrule/kaggle/blob/main/Bentech-Graphs/convert_input_to_COCO_format.ipynb
 
 
 ## References
 {1} Layout-Parser: https://layout-parser.github.io/
+
 {2} Detectron2: https://github.com/facebookresearch/detectron2
