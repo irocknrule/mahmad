@@ -12,7 +12,7 @@ tags:
 classes: wide
 ---
 
-Following up on the Kaggle Benetech graphs competition post earlier (https://irocknrule.github.io/mahmad/blog/fastai/computer%20vision/Benetech_image_classifier/) where I described an implementation of a simple but powerful image classifier using fastai, in this post I talk about the next step in the competition where we need to carry out object detection and Optical Character Reader (OCR) from the given images. I had mentioned in the previous post that I selected this particular competition from Kaggle because it required a relatively deep dive into various aspects of Deep Learning (DL) and computer vision, so was ideal avenue to get my feet wet in these areas. 
+Following up on the Kaggle Benetech graphs competition post earlier [(Simple Image classification using fastai)](https://irocknrule.github.io/mahmad/blog/fastai/computer%20vision/Benetech_image_classifier/) where I described an implementation of a simple but powerful image classifier using fastai, in this post I talk about the next step in the competition where we need to carry out object detection and Optical Character Reader (OCR) from the given images. I had mentioned in the previous post that I selected this particular competition from Kaggle because it required a relatively deep dive into various aspects of Deep Learning (DL) and computer vision, so was ideal avenue to get my feet wet in these areas. 
 
 In this post, we look at how we can train an effective object detection and OCR model using LayoutParser {1} which uses the Detectron2 architecture created by FaceBook Research {2} and is a standard, highly-performant and popular object detection model. 
 
