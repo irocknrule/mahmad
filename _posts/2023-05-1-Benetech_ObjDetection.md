@@ -39,6 +39,49 @@ coco_data = {
 
 The code for the converting the 10K random samples from the input dataset of ~60K images is shared in the notebook here: https://github.com/irocknrule/kaggle/blob/main/Bentech-Graphs/convert_input_to_COCO_format.ipynb
 
+The various object categories we are trying to identify are the following:
+
+```python 
+coco_data['categories']
+[{'id': 1, 'name': 'chart_title'},
+ {'id': 2, 'name': 'axis_title'},
+ {'id': 3, 'name': 'tick_label'},
+ {'id': 4, 'name': 'plot-bb'},
+ {'id': 5, 'name': 'x-axis-tick'},
+ {'id': 6, 'name': 'y-axis-tick'},
+ {'id': 7, 'name': 'other'},
+ {'id': 8, 'name': 'tick_grouping'}]
+```
+
+### Model Training with Detectron2
+
+Detectron2 has shared some ready start-up scripts to carry out the model training process which we leverage here. Firstly, we need to split the input image and annotations set into training and testing (as required to train all models). A handy ```cocosplit.py``` is used to create a training set from 85% of the input with the remaining set aside of testing/validation. 
+
+```python
+python3 cocosplit.py --annotation-path sample_graphs/result.json --split-ratio 0.85 --train sample_graphs/train.json --test sample_graphs/test.json
+```
+
+Link to `cocosplit.py` file here: https://github.com/irocknrule/kaggle/blob/main/Bentech-Graphs/cocosplit.py
+
+Now we use the training script provided to start the training process. Note that instead of training with a ipython notebook, I ended up using the script as once it is set up correctly we can pass in relevant parameters and options and let the training process continue. 
+
+``` python
+python train_net.py --dataset_name sample_1 --json_annotation_train train.json --image_path_train sample_1/ --json_annotation_val test.json --image_path_val sample_1/ --config-file fast_rcnn_R_50_FPN_3x.yaml --resume 
+OUTPUT_DIR . SOLVER.IMS_PER_BATCH 2 SOLVER.MAX_ITER 2000 SOLVER.BASE_LR 0.00025
+```
+
+Detectron2 provides a rich range of options for model training and I have been experimenting with some of them to better understand their effects on the model (which I plan on writing about in an upcoming post). For this initial exercise, we keep things simple and pretty much use most options out of the box. The options above are:
+
+1. `--dataset_name:` Detectron2 requires the datasets being used to be 'registered' in the library for various tracking and optimization purposes. So the dataset name is needed to be passed in - for my example here, i ended up using a very generic name (it does not have to be globally unique) but naming these separately would be very useful to keep track.
+2. `--json_annotation_{train|test}:` Paths to the training and testing JSON files. 
+3. `--image_path_{train|test}`: Paths to the training and testing image files. Note that the script automatically appends 'images/' to the path, so we only include the top level directory here.
+4. `--config_file:` A starting training config file, here we re-use the standard RCNN config. Note that this does not use the RCNN model weights as a starting point but only uses the config options. I tried using a standard model such as resnet to start training but the results were unexpected. I will definitely write up my findings from that experiment in an upcoming post. 
+5. `--resume:` This is a critical option to pass in as this tells Detectron2 to resume training from the last saved checkpoint instead of starting from scratch. 
+6. Training options: Other options above include the total number of training iterations, the base learning rate and the output directory. 
+
+The training script used is: https://github.com/irocknrule/kaggle/blob/main/Bentech-Graphs/train_net.py
+
+
 
 ## References
 {1} Layout-Parser: https://layout-parser.github.io/
