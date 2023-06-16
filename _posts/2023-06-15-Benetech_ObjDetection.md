@@ -35,7 +35,7 @@ Data inputs to detectron2 require image annotations with segments/object boundin
 
 The annotation JSON provided as input for the Kaggle competition was not in this format - we had specific directories for images and annotations and the annotation format had multiple different fields. So we write up a quick python notebook to carry out the transformation from the input to the standard COCO format as shown below:
 
-```
+```python
 coco_data = {
     "info": {
         "description": "Benetech input images - random 10K sample",
@@ -110,8 +110,9 @@ Evaluation results for bbox:
 | 38.585 | 68.911 | 36.219 | 34.093 | 21.943 | 42.680 |
 
 Per-category bbox AP: 
+
 | category    | AP     | category      | AP     | category    | AP     |
-|:------------|:-------|:--------------|:-------|:------------|:-------|
+|:-----------:|:------:|:-------------:|:------:|:-----------:|:------:|
 | chart_title | 41.167 | axis_title    | 49.393 | tick_label  | 63.405 |
 | plot-bb     | 74.846 | x-axis-tick   | 35.329 | y-axis-tick | 44.537 |
 | other       | 0.000  | tick_grouping | 0.000  |             |        |
@@ -122,10 +123,10 @@ The following inferences can be made from the table above:
 - The median AP for all objects are ~69%.
 
 ## References
-{1} Layout-Parser: [](https://layout-parser.github.io/)
+{1} Layout-Parser: [https://layout-parser.github.io/](https://layout-parser.github.io/)
 
-{2} Detectron2: [](https://github.com/facebookresearch/detectron2)
+{2} Detectron2: [https://github.com/facebookresearch/detectron2](https://github.com/facebookresearch/detectron2)
 
-3} COCO format: [](https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-coco-overview.html)
+3} COCO format: [https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-coco-overview.html](https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-coco-overview.html)
 
-{4}What is Average Precision in Object Detection & Localization Algorithms and how to calculate it? : [](https://towardsdatascience.com/what-is-average-precision-in-object-detection-localization-algorithms-and-how-to-calculate-it-3f330efe697b)
+{4}What is Average Precision in Object Detection & Localization Algorithms and how to calculate it? : [https://towardsdatascience.com/what-is-average-precision-in-object-detection-localization-algorithms-and-how-to-calculate-it-3f330efe697b](https://towardsdatascience.com/what-is-average-precision-in-object-detection-localization-algorithms-and-how-to-calculate-it-3f330efe697b)
