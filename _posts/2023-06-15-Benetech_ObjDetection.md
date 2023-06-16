@@ -104,9 +104,11 @@ For object detection and image segmentation, Average Precision (AP) is used as t
 The training gives us the following results on the test set:
 
 Evaluation results for bbox: 
-Evaluation results for bbox: 
+
 |   AP   |  AP50  |  AP75  |  APs   |  APm   |  APl   |
+
 |:------:|:------:|:------:|:------:|:------:|:------:|
+
 | 38.585 | 68.911 | 36.219 | 34.093 | 21.943 | 42.680 |
 
 Per-category bbox AP: 
@@ -122,10 +124,10 @@ The following inferences can be made from the table above:
 - The median AP for all objects are ~69%.
 
 ## References
-{1} Layout-Parser: https://layout-parser.github.io/
+{1} Layout-Parser: (https://layout-parser.github.io/)
 
-{2} Detectron2: https://github.com/facebookresearch/detectron2
+{2} Detectron2: (https://github.com/facebookresearch/detectron2)
 
-3} COCO format: https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-coco-overview.html
+3} COCO format: (https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-coco-overview.html)
 
 {4}What is Average Precision in Object Detection & Localization Algorithms and how to calculate it? : https://towardsdatascience.com/what-is-average-precision-in-object-detection-localization-algorithms-and-how-to-calculate-it-3f330efe697b
