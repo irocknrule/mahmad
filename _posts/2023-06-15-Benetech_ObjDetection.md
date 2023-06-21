@@ -153,6 +153,8 @@ lp.draw_box(image, layout, box_width=3)
 
 This gives us the following object with bounding boxes. 
 
+{% include figure image_path="/assets/images/blogs/graph+allbbox+0.5thresh.png" alt="" caption="LayoutParser bounding boxes from model inference based on confidence threshold of 0.5"%}
+
 We can see that the model is doing a relatively good job of identifying the chart title, plot bounding box, axis titles and the x and y tick labels. If we go back to the evaluation results, we observe that the AP for the plot bounding box was highest at 74 while tick labels were relatively high at 63. The axis titles had an AP of about 50% too and since we specified a threshold of 50, the x and y tick values were not plotted. 
 
 Let us also look at an instance of using LayoutParser's OCR engine to extract some information from the graph. An interesting use case is the chart title. Lets first plot only the *chart_title* bounding box:
@@ -162,7 +164,7 @@ graphtitle_blocks = lp.Layout([b for b in layout if b.type=='chart_title'])
 lp.draw_box(image, graphtitle_blocks,box_width=3,show_element_id=True)
 ```
 
-{% include figure image_path="/assets/images/blogs/show_batch_input.png" alt="" caption="An input batch of graph pictures being used for training. These images are from the Benetech Kaggle competition."%}
+{% include figure image_path="/assets/images/blogs/graph+charttile+0.5thresh.png" alt="" caption="Chart Title bounding boxes as inferred from the model."%}
 
 We see that LayoutParser assigns 2 elements to the chart title based on the confidence threshold. In any case, lets go ahead and extract the text using OCR. 
 
@@ -193,7 +195,9 @@ Deaths - Malaria - Sex: Both - Age:
 ---
 ```
 
+## Wrapping up
 
+In this post we trained an object detection model from scratch using Detectron2 which is also used by the handy LayoutParser library to detect layouts from images. We had to convert the provide annotations into COCO format and then trained a Detectron2 model followed by an inference example. In the next post, I will dive deeper into the OCR extraction using LayoutParser for this Kaggle competition and put things together for the entire workflow to round out this really interesting project.
 
 ## References
 {1} Layout-Parser: [https://layout-parser.github.io/](https://layout-parser.github.io/)
