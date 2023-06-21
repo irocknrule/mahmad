@@ -51,7 +51,7 @@ coco_data = {
 }
 ```
 
-The code for the converting the 10K random samples from the input dataset of ~60K images is shared in the notebook here: https://github.com/irocknrule/kaggle/blob/main/Bentech-Graphs/convert_input_to_COCO_format.ipynb
+The code for the converting the 10K random samples from the input dataset of ~60K images is shared in the notebook here: [https://github.com/irocknrule/kaggle/blob/main/Bentech-Graphs/convert_input_to_COCO_format.ipynb](https://github.com/irocknrule/kaggle/blob/main/Bentech-Graphs/convert_input_to_COCO_format.ipynb)
 
 The various object categories we are trying to identify are the following:
 
@@ -75,7 +75,7 @@ Detectron2 has shared some ready start-up scripts to carry out the model trainin
 python3 cocosplit.py --annotation-path sample_graphs/result.json --split-ratio 0.85 --train sample_graphs/train.json --test sample_graphs/test.json
 ```
 
-Link to `cocosplit.py` file here: https://github.com/irocknrule/kaggle/blob/main/Bentech-Graphs/cocosplit.py
+Link to `cocosplit.py` file here: [https://github.com/irocknrule/kaggle/blob/main/Bentech-Graphs/cocosplit.py](https://github.com/irocknrule/kaggle/blob/main/Bentech-Graphs/cocosplit.py)
 
 Now we use the training script provided to start the training process. Note that instead of training with a ipython notebook, I ended up using the script as once it is set up correctly we can pass in relevant parameters and options and let the training process continue. 
 
@@ -93,7 +93,7 @@ Detectron2 provides a rich range of options for model training and I have been e
 5. `--resume:` This is a critical option to pass in as this tells Detectron2 to resume training from the last saved checkpoint instead of starting from scratch. 
 6. Training options: Other options above include the total number of training iterations, the base learning rate and the output directory. 
 
-The training script used is: https://github.com/irocknrule/kaggle/blob/main/Bentech-Graphs/train_net.py
+The training script used is: [https://github.com/irocknrule/kaggle/blob/main/Bentech-Graphs/train_net.py](https://github.com/irocknrule/kaggle/blob/main/Bentech-Graphs/train_net.py)
 
 ### Training results
 
