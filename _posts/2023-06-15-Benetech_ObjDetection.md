@@ -122,6 +122,83 @@ The following inferences can be made from the table above:
 - *tick_label* AP is 63% and for *plot-bb* it is the highest at ~75%.
 - The median AP for all objects are ~69%.
 
+## Inference
+We now have a trained object detection model and use LayoutParser to first generate bounding boxes for all the elements in the graph and then follow it up by OCR to read the values of these boxes. We will delve into more detail with OCR and its results in a follow up post, as we need to train the model for a longer period of time to have effective results. So here we will touch on the simpler inference from the trained model. 
+
+We create a LayoutParser detectron model and provide the path to the config and final model files along-with the label map of the classes we are trying to predict. We also provide a score threshold as a confidence bound to let the model know how sure we would like it to be before making a prediction. In the example below, again due to low model training time I set the threshold to 0.5. 
+
+```python
+import requests
+import layoutparser as lp
+import cv2
+from pycocotools.coco import COCO
+
+model = lp.Detectron2LayoutModel(
+    config_path = "config.yaml",
+    model_path = "model_final.pth",
+    extra_config = ["MODEL.ROI_HEADS.SCORE_THRESH_TEST", 0.50],
+                   label_map={0: "chart_title", 1:"axis_title", 2:"tick_label", 3:"plot-bb",4:"x-axis-tick", 5:"y-axis-tick", 6:"other", 7:"tick_grouping"} # <-- Only output high accuracy preds
+)
+```
+
+We then read an image from the test set (this image was originally part of the training set shared by the organizers but since we selected 10K images for training, I re-purposed more images from the training set into the test set. Suffice to say these test images were not seen by the model during training.)
+
+```python
+image = cv2.imread("../data/test/images/45c20af1f6b8.jpg")
+image = image[..., ::-1]
+
+layout = model.detect(image)
+lp.draw_box(image, layout, box_width=3)
+```
+
+This gives us the following object with bounding boxes. 
+
+{% include figure image_path="/assets/images/blogs/graph+allbbox+0.5thresh.png" alt="" caption="LayoutParser bounding boxes from model inference based on confidence threshold of 0.5"%}
+
+We can see that the model is doing a relatively good job of identifying the chart title, plot bounding box, axis titles and the x and y tick labels. If we go back to the evaluation results, we observe that the AP for the plot bounding box was highest at 74 while tick labels were relatively high at 63. The axis titles had an AP of about 50% too and since we specified a threshold of 50, the x and y tick values were not plotted. 
+
+Let us also look at an instance of using LayoutParser's OCR engine to extract some information from the graph. An interesting use case is the chart title. Lets first plot only the *chart_title* bounding box:
+
+```python
+graphtitle_blocks = lp.Layout([b for b in layout if b.type=='chart_title'])
+lp.draw_box(image, graphtitle_blocks,box_width=3,show_element_id=True)
+```
+
+{% include figure image_path="/assets/images/blogs/graph+charttile+0.5thresh.png" alt="" caption="Chart Title bounding boxes as inferred from the model."%}
+
+We see that LayoutParser assigns 2 elements to the chart title based on the confidence threshold. In any case, lets go ahead and extract the text using OCR. 
+
+```python
+ocr_agent = lp.TesseractAgent(languages='eng')
+or block in graphtitle_blocks:
+    segment_image = (block
+                       .pad(left=5, right=5, top=5, bottom=5)
+                       .crop_image(image))
+        # add padding in each image segment can help
+        # improve robustness
+
+    text = ocr_agent.detect(segment_image)
+    block.set(text=text, inplace=True)
+    
+for txt in graphtitle_blocks.get_texts():
+    print(txt, end='\n---\n')
+```
+
+The authors of LayoutParser suggest adding a padding across the bounding box of the OCR text to be read to enable more accurate OCR extraction, so the code above first does that before cropping that part of the image before sending it to the Tesseract OCR engine. We see that the end result is accurate (if we consider both blocks of the chart title).
+
+```
+Deaths - Malaria - Sex: Both - Age: 50-69 years (Number) in Malaysia
+
+---
+Deaths - Malaria - Sex: Both - Age:
+
+---
+```
+
+## Wrapping up
+
+In this post we trained an object detection model from scratch using Detectron2 which is also used by the handy LayoutParser library to detect layouts from images. We had to convert the provide annotations into COCO format and then trained a Detectron2 model followed by an inference example. In the next post, I will dive deeper into the OCR extraction using LayoutParser for this Kaggle competition and put things together for the entire workflow to round out this really interesting project.
+
 ## References
 {1} Layout-Parser: [https://layout-parser.github.io/](https://layout-parser.github.io/)
 
