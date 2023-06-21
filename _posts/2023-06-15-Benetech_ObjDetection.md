@@ -164,7 +164,7 @@ graphtitle_blocks = lp.Layout([b for b in layout if b.type=='chart_title'])
 lp.draw_box(image, graphtitle_blocks,box_width=3,show_element_id=True)
 ```
 
-{% include figure image_path="/assets/images/blogs/graph+charttile+0.5thresh.png" alt="" caption="Chart Title bounding boxes as inferred from the model."%}
+{% include figure image_path="/assets/images/blogs/graph+charttitle+0.5thresh.png" alt="" caption="Chart Title bounding boxes as inferred from the model."%}
 
 We see that LayoutParser assigns 2 elements to the chart title based on the confidence threshold. In any case, lets go ahead and extract the text using OCR. 
 
