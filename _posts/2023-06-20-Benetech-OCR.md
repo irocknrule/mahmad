@@ -85,7 +85,7 @@ lp.draw_box(image, element_blocks,box_width=3, show_element_id=True)
 
 ```
 
-{% include figure image_path="/assets/images/blogs/graps+chart-title+predictions.png" alt="" caption="Plot chart title as predicted by the model."%}
+{% include figure image_path="/assets/images/blogs/graps+chart-title+predictions.png" alt="" caption="Plot chart title as predicted by the model."%}{: width="300" height="100"}
 
 
 ```python
