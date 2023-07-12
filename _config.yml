@@ -61,30 +61,27 @@ author:
   location : "Seattle, WA"
   bio    : "Hello and welcome to this page. I am currently an Applied Scientist at Amazon with previous stops in AWS and Akamai. "
   links:
-    - label: "Website"
+    - label: "LinkedIn"
       icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/mdzub"
+      url: "https://www.linkedin.com/in/mohammad-zubair-ahmad-2a2a1a60/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/irocknrule"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com//irocknrule"
+      url: "https://instagram.com/irocknrule"
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/irocknrule"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://instagram.com/irocknrule"
+    - label: "LinkedIn"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.linkedin.com/in/mohammad-zubair-ahmad-2a2a1a60/"
 
 defaults:
   # _posts
