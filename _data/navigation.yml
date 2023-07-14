@@ -1,8 +1,8 @@
 main:
   - title: "Posts"
     url: /posts/
-  - title: "Pages"
-    url: /pages/
+  - title: "Projects"
+    url: /pages/home.md
   - title: "Categories"
     url: /categories/
   - title: "Tags"
