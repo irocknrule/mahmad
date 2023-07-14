@@ -3,13 +3,13 @@ permalink: /projects/
 title: "Projects"
 author_profile: true
 classes: wide
-date: April 30, 2023
+date: July 14, 2023
 
 feature_row0-1:
   - image_path: assets/images/blogs/vertbar_2.png
     alt: "AWS app demo"
     title: "Benetech Kaggle"
-    text: "I developed a Gifify app where a user can upload a video and get it processed into a gif. This is a Flask app deployed to AWS EC2 instance. The user login data is saved into DynamoDB, while the users' uploaded videos and resulting gifs are stored on S3 buckets. The video processing is implemented through a Lambda function (deployed via Docker to ECS)."
+    excerpt: "I developed a Gifify app where a user can upload a video and get it processed into a gif. This is a Flask app deployed to AWS EC2 instance. The user login data is saved into DynamoDB, while the users' uploaded videos and resulting gifs are stored on S3 buckets. The video processing is implemented through a Lambda function (deployed via Docker to ECS)."
     url: "https://github.com/irocknrule/kaggle/tree/main/Bentech-Graphs"
     btn_label: "Code"
     btn_class: "btn--primary"
