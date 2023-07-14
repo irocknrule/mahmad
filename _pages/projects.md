@@ -2,10 +2,6 @@
 permalink: /projects/
 title: "Projects"
 
----
-
-Here is a link to projects.
-
 feature_row0-1:
   - image_path: assets/images/blogs/vertbar_2.png
     alt: "AWS app demo"
@@ -17,3 +13,9 @@ feature_row0-1:
     tags:
         - Object Detection
         - Detectron2
+---
+
+Here is a link to projects.
+
+{% include feature_row id="feature_row0-1" type="left" %}
+<a name="Kaggle Benetech Competition"></a>
