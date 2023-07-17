@@ -4,8 +4,8 @@ permalink: /
 hidden: true
 header:
   overlay_color: "#5e616c"
-  overlay_image: /assets/images/mm-home-page-feature.jpg
-excerpt: >
+  overlay_image: /assets/images/eberhard-grossgasteiger-iRD7PmG4Ygk-unsplash.jpg
+excerpt: "Source:"
  
 feature_row:
   - image_path: /assets/images/mm-customizable-feature.png
@@ -21,5 +21,7 @@ feature_row:
     btn_class: "btn--primary"
     btn_label: "Check Out"
 ---
+
+Hello and welcome to the main landing page! 
 
 {% include feature_row %}
