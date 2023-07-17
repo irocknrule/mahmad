@@ -29,5 +29,5 @@ Here is a list of fun projects which I have been working on outside of work.
 {% include feature_row id="feature_row0-1" type="left" %}
 <a name="Kaggle Benetech Competition"></a>
 
-{% include feature_row id="feature_row0-1" type="left" %}
+{% include feature_row id="feature_row0-2" type="left" %}
 <a name="Generative AI using GANs to create new images from scratch."></a>
