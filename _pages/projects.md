@@ -10,7 +10,7 @@ feature_row0-1:
     alt: "AWS app demo"
     title: "Benetech Kaggle"
     excerpt: "This Kaggle competition involved learning about various aspects of Deep Learning. From a simple image classifier, to object detection and segmentation using Detectron2 to OCR with LayoutParser, this project pipeline involved learning and navigating across many fields. Check out these posts describing the project:
-    - https://irocknrule.github.io/mahmad/blog/fastai/computer%20vision/Benetech_image_classifier/"
+    - (Post 1)[https://irocknrule.github.io/mahmad/blog/fastai/computer%20vision/Benetech_image_classifier/]"
     url: "https://github.com/irocknrule/kaggle/tree/main/Bentech-Graphs"
     btn_label: "Code"
     btn_class: "btn--primary"
