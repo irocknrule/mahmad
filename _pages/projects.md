@@ -33,7 +33,7 @@ feature_row0-3:
     btn_class: "btn--primary"
 ---
 
-
+## Data Science Projects
 
 Here is a list of fun projects which I have been working on outside of work.
 
