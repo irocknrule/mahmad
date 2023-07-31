@@ -53,4 +53,7 @@ Here is a list of fun projects which I have been working on outside of work.
 <a name="Generative AI using GANs to create new images from scratch."></a>
 
 {% include feature_row id="feature_row0-3" type="left" %}
+<a name="OCR-Free Document Understanding with Donut."></a>
+
+{% include feature_row id="feature_row0-4" type="left" %}
 <a name="Tabular ML with AutoGluon."></a>
