@@ -24,6 +24,15 @@ feature_row0-2:
     btn_class: "btn--primary"
 
 feature_row0-3:
+  - image_path: assets/images/blogs/donut_model.png
+    alt: "OCR-Free Document Understanding with Donut"
+    title: "OCR-Free Document Understanding with Donut."
+    excerpt: "I experiment with the Document Understanding Transformer Model to read and answer questions from an image without using OCR."
+    url: "https://github.com/irocknrule/projects/blob/main/financial_images/10K-extraction-donut.ipynb"
+    btn_label: "Code"
+    btn_class: "btn--primary"
+
+feature_row0-4:
   - image_path: assets/images/blogs/autogluon.png
     alt: "Tabular ML with AutoGluon"
     title: "Tabular ML with AutoGluon"
