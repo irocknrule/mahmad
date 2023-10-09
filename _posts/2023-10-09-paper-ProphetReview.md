@@ -30,9 +30,11 @@ The authors use Figure 2 as their demo dataset, which comprises of events create
 
 ## Prophet Model
 
+{% include figure image_path="/assets/images/blogs/fb_prophet_eq1.png" alt="" caption="Equation 1: The decomposable time series model with the main components."%}{: .align-left style="width: 35%;"}
+
+
 The authors propose a decomposable time series model with 3 components: **trend**, **seasonality** and **holidays**. They are combined in the following simple equation:
 
-{% include figure image_path="/assets/images/blogs/fb_prophet_eq1.png" alt="" caption="Equation 1: The decomposable time series model with the main components."%}{: .align-left style="width: 35%;"}
 
 where
 
