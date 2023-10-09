@@ -19,7 +19,7 @@ Time Series forecasts often involve forecasting based on thousands of data point
 
 The paper 'Forecasting at Scale' by Taylor and Letham from Facebook approach this problem of generating huge numbers of forecasts from a different perspective of scale - they do not focus on typical scale considerations such as compute power and storage. Scale for them invokes how we can invoke a 'human-in-the-loop' with expert (or adequate) domain knowledge to help configure the forecasts easily and then let automation handle the hard task of model evaluation. This is a really interesting approach towards generating large amounts of forecasts for capacity planning or anomaly detection and in my opinion an effective proposal towards a good solution to this hard problem. Figure 1 presents a view of this approach which best makes use of both a human and an automated system.
 
-{% include figure image_path="/assets/images/blogs/fb_prophet_fig1.png" alt="" caption="Figure 1: Proposed forecasting approach with automation and analyst-in-the-loop."%}
+{% include figure image_path="/assets/images/blogs/fb_prophet_fig1.png" alt="" caption="Figure 1: Proposed forecasting approach with automation and analyst-in-the-loop."%}{: .align-center style="width: 5%;"}
 
 The authors use Figure 2 as their demo dataset, which comprises of events created on Facebook for every day of the week for the years between 2013 to 2017. As can be seen from the figure, the times series includes multiple weekly and yearly seasonalities, trends and outliers. Also holiday effects are very evident too. 
 
