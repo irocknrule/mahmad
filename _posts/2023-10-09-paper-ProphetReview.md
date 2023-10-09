@@ -23,7 +23,7 @@ The paper 'Forecasting at Scale' by Taylor and Letham from Facebook approach thi
 
 The authors use Figure 2 as their demo dataset, which comprises of events created on Facebook for every day of the week for the years between 2013 to 2017. As can be seen from the figure, the times series includes multiple weekly and yearly seasonalities, trends and outliers. Also holiday effects are very evident too. 
 
-{% include figure image_path="/assets/images/blogs/fb_prophet_fig2.png" alt="" caption="Figure 2: Dataset used in this paper. Contains number of events created on Facebook from 2013 to 2017 with each day of the week being color coded."%}{: .align-left style="width: 50%;"}
+{% include figure image_path="/assets/images/blogs/fb_prophet_fig2.png" alt="" caption="Figure 2: Dataset used in this paper. Contains number of events created on Facebook from 2013 to 2017 with each day of the week being color coded."%}{: .align-left style="width: 75%;"}
 
 ## Prophet Model
 
