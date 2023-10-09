@@ -57,7 +57,7 @@ Changepoint selection can be carried out automatically once the analyst specifie
 
 ## Model fitting results
 
-{% include figure image_path="/assets/images/blogs/fb_prophet_fig3.png" alt="" caption="Figure 3: Prophet forecast for the entire time period with interpolation into the future as the forecast. We can observe the model learns about the relevant seasonalities and that the overall trend at the end of 2016 is generally increasing."%}{: .align-left style="width: 50%;"}
+{% include figure image_path="/assets/images/blogs/fb_prophet_fig3.png" alt="" caption="Figure 3: Prophet forecast for the entire time period with interpolation into the future as the forecast. We can observe the model learns about the relevant seasonalities and that the overall trend at the end of 2016 is generally increasing."%}{: .align-left style="width: 75%;"}
 
 Figure 3 above presents the results of using Prophet on the input dataset with the solid lines representing the curve-fitting while the dashed line represents the out-of-sample forecast. We can see that individual end of year seasonalities have been captured by Prophet whereas the increasing trend at the end of 2016 going in to 2017 are also showing up in the forecasts. Other traditional forecasting techniques missed these (at the time of this paper being published).
 ## Comparison with other modeling techniques
