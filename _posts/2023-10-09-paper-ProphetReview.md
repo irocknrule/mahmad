@@ -25,7 +25,7 @@ The paper 'Forecasting at Scale' by Taylor and Letham from Facebook approach thi
 
 The authors use Figure 2 as their demo dataset, which comprises of events created on Facebook for every day of the week for the years between 2013 to 2017. As can be seen from the figure, the times series includes multiple weekly and yearly seasonalities, trends and outliers. Also holiday effects are very evident too. 
 
-{% include figure image_path="/assets/images/blogs/fb_prophet_fig2.png" alt="" caption="Figure 2: Dataset used in this paper. Contains number of events created on Facebook from 2013 to 2017 with each day of the week being color coded."%}{: .align-left style="width: 75%;"}
+{% include figure image_path="/assets/images/blogs/fb_prophet_fig2.png" alt="" caption="Figure 2: Dataset used in this paper. Contains number of events created on Facebook from 2013 to 2017 with each day of the week being color coded."%}{: .align-left style="width: 85%;"}
 
 
 ## Prophet Model
@@ -60,7 +60,7 @@ Changepoint selection can be carried out automatically once the analyst specifie
 
 ## Model fitting results
 
-{% include figure image_path="/assets/images/blogs/fb_prophet_fig3.png" alt="" caption="Figure 3: Prophet forecast for the entire time period with interpolation into the future as the forecast. We can observe the model learns about the relevant seasonalities and that the overall trend at the end of 2016 is generally increasing."%}{: .align-left style="width: 75%;"}
+{% include figure image_path="/assets/images/blogs/fb_prophet_fig3.png" alt="" caption="Figure 3: Prophet forecast for the entire time period with interpolation into the future as the forecast. We can observe the model learns about the relevant seasonalities and that the overall trend at the end of 2016 is generally increasing."%}{: .align-left style="width: 85%;"}
 
 Figure 3 above presents the results of using Prophet on the input dataset with the solid lines representing the curve-fitting while the dashed line represents the out-of-sample forecast. We can see that individual end of year seasonalities have been captured by Prophet whereas the increasing trend at the end of 2016 going in to 2017 are also showing up in the forecasts. Other traditional forecasting techniques missed these (at the time of this paper being published).
 ## Comparison with other modeling techniques
