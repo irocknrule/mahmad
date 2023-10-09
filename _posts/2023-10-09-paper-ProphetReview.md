@@ -19,7 +19,7 @@ Time Series forecasts often involve forecasting based on thousands of data point
 
 The paper 'Forecasting at Scale' by Taylor and Letham from Facebook approach this problem of generating huge numbers of forecasts from a different perspective of scale - they do not focus on typical scale considerations such as compute power and storage. Scale for them invokes how we can invoke a 'human-in-the-loop' with expert (or adequate) domain knowledge to help configure the forecasts easily and then let automation handle the hard task of model evaluation. This is a really interesting approach towards generating large amounts of forecasts for capacity planning or anomaly detection and in my opinion an effective proposal towards a good solution to this hard problem. Figure 1 presents a view of this approach which best makes use of both a human and an automated system.
 
-{% include figure image_path="/assets/images/blogs/fb_prophet_fig1.png" alt="" caption="Figure 1: Proposed forecasting approach with automation and analyst-in-the-loop."%}{: .align-center style="width: 5%;"}
+{% include figure image_path="/assets/images/blogs/fb_prophet_fig1.png" alt="" caption="Figure 1: Proposed forecasting approach with automation and analyst-in-the-loop."%}{: .align-left style="width: 35%;"}
 
 The authors use Figure 2 as their demo dataset, which comprises of events created on Facebook for every day of the week for the years between 2013 to 2017. As can be seen from the figure, the times series includes multiple weekly and yearly seasonalities, trends and outliers. Also holiday effects are very evident too. 
 
@@ -29,7 +29,7 @@ The authors use Figure 2 as their demo dataset, which comprises of events create
 
 The authors propose a decomposable time series model with 3 components: **trend**, **seasonality** and **holidays**. They are combined in the following simple equation:
 
-{% include figure image_path="/assets/images/blogs/fb_prophet_eq1.png" alt="" caption="Equation 1: The decomposable time series model with the main components."%}
+{% include figure image_path="/assets/images/blogs/fb_prophet_eq1.png" alt="" caption="Equation 1: The decomposable time series model with the main components."%}{: .align-left style="width: 35%;"}
 
 where
 
@@ -53,11 +53,11 @@ As an aside, it is important to understand what is a saturating growth model - g
 
 Changepoint selection can be carried out automatically once the analyst specifies specific known dates which may affect the trends or other growth-altering events. In the author's use case, they provide table 1 as the example list of holidays which affect the overall event creation numbers on facebook. 
 
-{% include figure image_path="/assets/images/blogs/fb_prophet_tab1.png" alt="" caption="Table 1: Example list of holidays provided to the model."%}
+{% include figure image_path="/assets/images/blogs/fb_prophet_tab1.png" alt="" caption="Table 1: Example list of holidays provided to the model."%}{: .align-left style="width: 35%;"}
 
 ## Model fitting results
 
-{% include figure image_path="/assets/images/blogs/fb_prophet_fig3.png" alt="" caption="Figure 3: Prophet forecast for the entire time period with interpolation into the future as the forecast. We can observe the model learns about the relevant seasonalities and that the overall trend at the end of 2016 is generally increasing."%}
+{% include figure image_path="/assets/images/blogs/fb_prophet_fig3.png" alt="" caption="Figure 3: Prophet forecast for the entire time period with interpolation into the future as the forecast. We can observe the model learns about the relevant seasonalities and that the overall trend at the end of 2016 is generally increasing."%}{: .align-left style="width: 35%;"}
 
 Figure 3 above presents the results of using Prophet on the input dataset with the solid lines representing the curve-fitting while the dashed line represents the out-of-sample forecast. We can see that individual end of year seasonalities have been captured by Prophet whereas the increasing trend at the end of 2016 going in to 2017 are also showing up in the forecasts. Other traditional forecasting techniques missed these (at the time of this paper being published).
 ## Comparison with other modeling techniques
